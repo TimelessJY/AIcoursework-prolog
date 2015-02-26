@@ -11,7 +11,7 @@ test_strategy(N,S1,S2):-
 %%		to get answers
 testFor(0, _, _, NumDraw, NumWin1, NumWin2, Longest, Shortest, GameLength, GameTime, NumPlays):-
 	GL = GameLength / NumPlays,
-	GT = GameTime / (NumPlays*1000),
+	GT = GameTime / NumPlays,
 	format(' ~d draws, ~n ~d wins for player 1, ~n ~d wins for player 2, ~n longest game has ~d moves, ~n shortest game has ~d moves, ~n average game length is ~2f, ~n average game time is ~3f', [NumDraw, NumWin1, NumWin2, Longest, Shortest,GL, GT]),!.
 
 testFor(N,S1,S2,NumDraw, NumWinB,NumWinR,Longest, Shortest, GameLength, GameTime, NumPlays):-
